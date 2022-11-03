@@ -17,7 +17,7 @@ function App(): JSX.Element {
   async function loadHolidays (): Promise<void>{
     const response: Response = await fetch(API_URL);
     const responseJson: any = await response.json();
-    const newHolidays: Holiday[] = responseJson.map((r: any, i:number) =>
+    const newHolidays: Holiday[] = responseJson.map((r: any, i: number) =>
     ({id: i, name: r['name'], date: new Date(r['date'])}));
 
     setHolidays(() => newHolidays);
